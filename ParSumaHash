@@ -1,0 +1,23 @@
+import java.util.HashSet;
+
+public class ParSumaHash {
+    public static boolean existeParConSuma(int[] arreglo, int K) {
+        HashSet<Integer> complementos = new HashSet<>();
+        for (int num : arreglo) {
+            int complemento = K - num;
+            if (complementos.contains(num)) {
+                System.out.println("Par encontrado: " + num + " + " + complemento + " = " + K);
+                return true;
+            }
+            complementos.add(complemento);
+        }
+        System.out.println("No existe par con suma " + K);
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] arreglo = {1, 4, 5, 7, 9};
+        int K = 9;
+        existeParConSuma(arreglo, K);
+    }
+}
