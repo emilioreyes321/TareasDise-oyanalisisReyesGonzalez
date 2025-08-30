@@ -1,0 +1,21 @@
+public class ParSumaDosArreglos {
+    public static boolean existeParConSuma(int[] arreglo, int K) {
+        int n = arreglo.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arreglo[i] + arreglo[j] == K) {
+                    System.out.println("Par encontrado: " + arreglo[i] + " + " + arreglo[j] + " = " + K);
+                    return true;
+                }
+            }
+        }
+        System.out.println("No existe par con suma " + K);
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] arreglo = {1, 4, 5, 7, 9};
+        int K = 9;
+        existeParConSuma(arreglo, K);
+    }
+}
