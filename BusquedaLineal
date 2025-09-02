@@ -1,0 +1,33 @@
+package tarea2;
+
+public class BusquedaLineal {
+
+    // Función de búsqueda lineal
+    public static int busquedaLineal(int[] arreglo, int valor) {
+        int comparaciones = 0;
+
+        for (int i = 0; i < arreglo.length; i++) {
+            comparaciones++; // cada iteración cuenta como comparación
+            if (arreglo[i] == valor) {
+                return comparaciones; // se encontró el valor
+            }
+        }
+
+        return comparaciones; // no se encontró
+    }
+
+    // Método principal
+    public static void main(String[] args) {
+        int[] datos = {3, 7, 12, 19, 25, 33, 42, 50};
+
+        int valorBuscado = 25;
+        int comps = busquedaLineal(datos, valorBuscado);
+        System.out.println("Buscando el valor " + valorBuscado);
+        System.out.println("Comparaciones realizadas: " + comps);
+
+        valorBuscado = 100;
+        comps = busquedaLineal(datos, valorBuscado);
+        System.out.println("\nBuscando el valor " + valorBuscado);
+        System.out.println("Comparaciones realizadas: " + comps);
+    }
+}
